@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block heading %}
+    User Signup 
+{% endblock %}
+
+
+{% block formspace %}
+    <form method="post">
+        <label for="Username">Enter a Username</label>
+        <input id="Username" type="text" name="username" />
+        <br>
+        <label for="Password">Enter a password</label>
+        <input id="Password" type="password" name="password" />
+        <br>
+        <label for="VerifyPW">Re enter password</label>
+        <input id="VerifyPW" type="password" name="verify_password" />
+        <br>
+        <label for="Email">Enter an email address</label>
+        <input id="Email" type="text" name="email" />
+        <br>
+        <input type="submit" value="Submit" />
+    
+
+
+
+    </form>
+{% endblock %}
