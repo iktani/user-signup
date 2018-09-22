@@ -8,11 +8,11 @@
 {% block formspace %}
     <form method="post">
         <label for="Username">Enter a Username</label>
-        <input id="Username" type="text" name="username" value="{{username}}" />
+        <input id="Username" type="text" name="username" value="{{username}}" />&nbsp;<em>Requirements: Between 3 and 20 characters, no spaces</em>
         <p class="error">{{username_error}}</p>
         <br>
         <label for="Password">Enter a password</label>
-        <input id="Password" type="password" name="password" value="{{password}}" />
+        <input id="Password" type="password" name="password" value="{{password}}" />&nbsp;<em>Requirements: Between 3 and 20 characters, no spaces.</em>
         <p class="error">{{password_error}}</p>
         <br>
         <label for="VerifyPW">Re enter password</label>
