@@ -1,5 +1,6 @@
 from flask import Flask, request, redirect, render_template
 import re
+import cgi
 
 app = Flask(__name__)
 app.config['DEBUG'] = True
@@ -8,7 +9,7 @@ app.config['DEBUG'] = True
 @app.route("/")
 def index():
     title = "User Signup Page"
-    return render_template("index.html", title=title)
+    return render_template("index.html", title=title, heading=title)
 
 
 def is_a_valid_email(email):
@@ -65,9 +66,9 @@ def validate():
     # if all fields pass validation, redirect to welcome page, if not return error messages
 
     if not username_error and not password_error and not verify_password_error and not email_error:
-        return render_template("welcome.html", title="Signup Successful!", username=username)  
+        return render_template("welcome.html", title="Signup Successful!", heading="Success!", username=username) 
     else:
-        return render_template("index.html", title="User Signup Form", username=username, username_error=username_error, password=password, password_error=password_error, verify_password=verify_password, verify_password_error=verify_password_error, email=email, email_error=email_error)
+        return render_template("index.html", title="User Signup Form", heading="User Signup Form - Please fix errors", username=username, username_error=username_error, password=password, password_error=password_error, verify_password=verify_password, verify_password_error=verify_password_error, email=email, email_error=email_error)
 
 
 

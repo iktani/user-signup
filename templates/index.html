@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block heading %}
-    User Signup 
+    {{heading}} 
 {% endblock %}
 
 
@@ -20,7 +20,7 @@
         <p class="error">{{verify_password_error}}</p>
         <br>
         <label for="Email">Enter an email address (optional)</label>
-        <input id="Email" type="text" name="email" value='{{email}}' />
+        <input id="Email" type="text" name="email" value='{{email}}' />&nbsp;<em>If entered, requirements: Between 3 and 20 characters, no spaces, must contain 1 "@" and 1 ".".</em>
         <p class="error">{{email_error}}</p>
         <br>
         <input type="submit" value="Submit" />
