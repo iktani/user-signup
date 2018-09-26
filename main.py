@@ -13,7 +13,8 @@ def index():
 
 
 def is_a_valid_email(email):
-    if not re.search(" ",email) and len(email) >= 3 and len(email) <= 20 and email.count("@") == 1 and email.count(".") == 1:
+    pattern=re.compile(r"^[\S]{3,20}$")
+    if pattern.match(email) and email.count("@") == 1 and email.count(".") == 1:
         return True
     else:
         return False    
@@ -36,11 +37,13 @@ def validate():
 
         
     # validate user inputs
+    pattern=re.compile(r"^[\S]{3,20}$")
+    
 
-    if len(username) < 3 or len(username) > 20 or not username or re.search(" ",username):
+    if not pattern.match(username) or not username:
         username_error = "Username entered is not valid. **Must have minimum length of 3 characters and maximum length of 20 characters with no spaces."
 
-    if len(password) < 3 or len(password) > 20 or not password or re.search(" ",password):
+    if not pattern.match(password) or not password:
         password_error = "Password entered is not valid. **Must have minimum length of 3 characters and maximum length of 20 characters with no spaces."
 
     # if passwords do not match, show different error
